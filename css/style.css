@@ -1,0 +1,153 @@
+body {
+  font-family: Raleway, sans-serif;
+}
+
+/* navbar */
+.navbar {
+  font-size: 1.3em;
+  min-height: 60px;
+}
+
+.navbar-nav>a,
+.navbar-brand {
+  padding-top: 5px !important;
+  padding-bottom: 10px !important;
+  height: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.navbar-inner {
+  background: transparent;
+}
+
+.bg-blue {
+  background-color: #1565c0DD;
+}
+
+/* carousel */
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  width: 2em;
+  height: 2em;
+}
+
+.carousel-inner {
+  max-height: 100vh;
+}
+
+.carousel-caption {
+  top: 55%;
+  transform: translateY(-50%);
+}
+
+.text {
+  font-size: 32pt;
+  line-height: 36pt;
+}
+
+.font-blue {
+  color: #1565c0;
+  font-weight: bold;
+}
+
+.font-white {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.font-black {
+  text-shadow: 1px;
+  color: #000000;
+  font-weight: bold;
+}
+
+.line-break {
+  font-size: 5pt;
+}
+
+.btn-about {
+  background-color: #ffffff00;
+  color: white;
+  border: 2px solid;
+}
+
+.btn-about:hover {
+  background-color: #1565c0DD;
+  color: white;
+}
+
+/* About */
+
+li {
+  line-height: 2.0em;
+}
+
+.about-col{
+  padding: 0 20px 0 20px;
+}
+
+.img-hoverable {
+  border: 5px;
+  transition:all 0.3s ease-in-out;
+}
+
+.img-hoverable:hover {
+  transform: scale(1.02);
+  box-shadow: 10px 10px #1565c0DD;
+}
+
+/* footer */
+footer {
+  font-size: 1.3em;
+  color: #ffffff;
+  height: 60px;
+}
+
+.fab {
+  padding: 15px 0px 0 10px;
+  font-size: 30px;
+  color: #fff;
+}
+
+/* @media */
+@media (max-height: 500px) {
+  .carousel-caption {
+    top: 40%;
+    transform: translateY(-50%);
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    margin-top: 60px;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  .carousel-caption {
+    top: 40%;
+    transform: translateY(-50%);
+  }
+
+  .text {
+    font-size: 16pt;
+    line-height: 18pt;
+  }
+
+  .btn-about, .btn-about:hover {
+    font-size: 0.8em;
+    height: 30px;
+    width: 110px;
+  }
+
+  .line-break {
+    font-size: 0pt;
+  }
+
+  .font-s1 {
+    font-size: 0.8em;
+  }
+}

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ho-Wan's Website</title>
+  <!-- HOSTED -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+  <!-- LOCAL -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="home"></div>
+  <!-- 0:navbar -->
+  <div id="import-navbar"></div>
+
+  <!-- 1:carousel -->
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div class="container-fluid flex">
+      <div class="row">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="img/b_concrete_cr.jpg" alt="First slide">
+            <div class="carousel-caption">
+              <div class="text">Hello, I'm
+                <span class="font-blue">Ho-Wan</span>.
+                <br> I'm an engineer.</br>
+              </div>
+              <p class="line-break"></p>
+              <button class="btn btn-about link-smooth" href="#about-me" dest="about-me">Find out more!</button>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="img/s_code_cr.jpg" alt="Second slide">
+            <div class="carousel-caption">
+              <div class="text font-white">Software Engineer:
+                <br>Full Stack Developer</br>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="img/b_hallway_cr.jpg" alt="Third slide">
+            <div class="carousel-caption">
+              <div class="text font-black">Structural Engineer:
+                <br>Building Designer</br>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2:about -->
+  <p class="line-break"></p>
+  <div class="container" id="about-me">
+    <div class="text-center">
+      <h2>
+        <b>ABOUT ME</b>
+      </h2>
+      <p>My passion is solving problems and developing solutions the world needs.</p>
+      <p>I value simple, scalable and functional solutions over complex and bespoke.</p>
+      <p class="line-break"></p>
+    </div>
+    <div class="row">
+      <div class="col-md-6 text-center about-col" id="software">
+        <h3>Software Engineer</h3>
+        <img src="img/i_coding.jpg" class="img-fluid img-hoverable">
+        <p class="line-break"></p>
+        <div class="text-left">
+          <h4>Focus</h4>
+          <ul>
+            <b>
+              <li> JavasSript: Node.js, Express, Angular</li>
+              <li>Python: Django</li>
+              <li>MongoDB, MySQL, PostgreSQL</li>
+            </b>
+          </ul>
+          <div class="font-s1">
+            <p>Secondary languages: C#, C++, Java</p>
+            <p>3D toolsets: Unity3D, three.js, processing</p>
+            <p>Front-end: Bootstrap, React, jQuery</p>
+            <p>Additional interests: Machine Learning, Computer Vision</p>
+          </div>
+          <br></br>
+        </div>
+      </div>
+      <div class="col-md-6 text-center about-col" id="structures">
+        <h3>Structural Engineer</h3>
+        <img src="img/i_construction.jpg" class="img-fluid img-hoverable">
+        <p class="line-break"></p>
+        <div class="text-left">
+          <h4>Experience</h4>
+          <ul>
+            <b>
+              <li>100 Bishopsgate - Core Design Lead</li>
+              <li>Nova Victoria - Project Engineer</li>
+              <li>Finite Element/ Lateral Stability Expert</li>
+          </ul>
+          </b>
+          <p>I am an experienced structural engineer and have worked as a senior engineer / project engineer on a number of
+            high profile construction projects.</p>
+          <p>I have worked with top clients such as Land Securities, Lend Lease, Brookfield, Mace, and many well respected architects
+            in London.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3:misc -->
+  <div class="container" id="computation">
+    <div class="row">
+      <div class="col-md-9 mx-auto text-center">
+        <h2>
+          <b>COMPUTATIONAL DESIGN</b>
+        </h2>
+        <p>My 3D cellular automata using rule 5766 can be found at the following link. (Game of Life)</p>
+        <a href="/comp/">
+          <img src="/img/3dca_scr1.JPG" class="img-fluid img-hoverable">
+        </a>
+        <br></br>
+        <p>I have an engineering degree from the University of Cambridge (Trinity College).</p>
+        <p>I am graduating with a masters degree in Computation from UCL in September 2018.</p>
+        <p>If you are interested in hiring a highly motivated and professional software engineer, you can contact me through
+          LinkedIn.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4:footer -->
+  <br>
+  <div id="import-footer"></div>
+
+  <!-- HOSTED -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+  <!-- LOCAL -->
+  <script src="js/index.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#import-navbar').load("/import/import.html #import-navbar-in");
+      $('#import-footer').load("/import/import.html #import-footer-in");
+    });
+  </script>
+
+</body>
+
+</html>
