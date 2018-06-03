@@ -57,11 +57,9 @@ body {
   font-weight: bold;
 }
 
-.font-black-outline {
-  color: #1565c0;
+.font-black {
+  color: #000000;
   font-weight: bold;
-  -webkit-text-stroke-width: 0.5px;
-  -webkit-text-stroke-color: #000;
 }
 
 .line-break {
