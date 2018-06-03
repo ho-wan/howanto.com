@@ -19,11 +19,3 @@ $(document).ready(function () {
     // end smooth scroll
   };
 });
-
-// Smooth scroll native
-// $(".link-smooth").on('click', function (event) {
-//   let my_href = this.getAttribute('href').replace(/#/, "");
-//   let element = document.getElementById(my_href);
-//   console.log(my_href, element);
-//   element.scrollIntoView({behavior: 'smooth', block: "start", inline: "nearest"});
-// });
