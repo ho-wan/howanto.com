@@ -21,6 +21,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120258112-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
+
     function gtag() {
       dataLayer.push(arguments);
     }
@@ -33,26 +34,7 @@
 <body>
   <div id="home"></div>
   <!-- 0:navbar -->
-  <!-- <div id="import-navbar"></div> -->
-  <div id="import-navbar-in">
-      <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-blue">
-        <div class="container-fluid">
-          <a class="navbar-brand fab fa-houzz fa-2x link-smooth" href="/index.html#home" dest="home"></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar" aria-controls="myNavbar" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="myNavbar">
-            <div class="navbar-nav ml-auto">
-              <a class="nav-item nav-link link-smooth" href="/index.html#about-me" dest="about-me">ABOUT</a>
-              <a class="nav-item nav-link link-smooth" href="/index.html#software" dest="software">SOFTWARE</a>
-              <a class="nav-item nav-link link-smooth" href="/index.html#structures" dest="structures">STRUCTURES</a>
-              <a class="nav-item nav-link link-smooth" href="/comp/" dest="">COMPUTATION</a>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </div>
+  <div id="import-navbar"></div>
 
   <!-- 1:carousel -->
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -161,13 +143,14 @@
   </div>
 
   <!-- 3:misc -->
-  <div class="container" id="computation">
+  <div class="container" id="projects">
     <div class="row">
       <div class="col-md-9 mx-auto text-center">
         <h2>
-          <b>COMPUTATIONAL DESIGN</b>
+          <b>PROJECTS</b>
         </h2>
-        <p>My 3D cellular automata using rule 5766 can be found at the following link. (Game of Life)</p>
+        <h3 class="font-blue">3D Game of Life</h3>
+        <p>My 3D cellular automata using rule 5766 (Game of Life) can be found at the following link. </p>
         <a href="/comp/">
           <img src="/img/3dca_scr1.JPG" class="img-fluid img-hoverable">
         </a>
@@ -193,8 +176,9 @@
   <!-- LOCAL -->
   <script src="js/index.js"></script>
   <script>
+    // import navbar and footer html
     $(document).ready(function () {
-      // $('#import-navbar').load("/import/import.html #import-navbar-in");
+      $('#import-navbar').load("/import/import.html #import-navbar-in");
       $('#import-footer').load("/import/import.html #import-footer-in");
     });
   </script>
