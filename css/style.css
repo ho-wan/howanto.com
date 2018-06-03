@@ -1,5 +1,6 @@
 body {
   font-family: Raleway, sans-serif;
+  /* font-family: Roboto , sans-serif; */
 }
 
 /* navbar */
@@ -56,10 +57,11 @@ body {
   font-weight: bold;
 }
 
-.font-black {
-  text-shadow: 1px;
-  color: #000000;
+.font-black-outline {
+  color: #1565c0;
   font-weight: bold;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: #000;
 }
 
 .line-break {
@@ -111,10 +113,21 @@ footer {
 }
 
 /* @media */
-@media (max-height: 500px) {
+@media (max-width: 500px), (max-height: 500px) {
+  .carousel-caption {
+    top: 50%;
+  }
+}
+
+@media (max-width: 400px) {
   .carousel-caption {
     top: 40%;
-    transform: translateY(-50%);
+  }
+}
+
+@media (max-height: 400px) {
+  .carousel-caption {
+    top: 45%;
   }
 }
 
@@ -125,11 +138,6 @@ footer {
 
   h2 {
     font-size: 1.5em;
-  }
-
-  .carousel-caption {
-    top: 40%;
-    transform: translateY(-50%);
   }
 
   .text {
@@ -151,3 +159,4 @@ footer {
     font-size: 0.8em;
   }
 }
+
