@@ -154,11 +154,10 @@ function onWindowResize() {
 /* keyboard event handler */
 function onWindowKeyDown(event) {
   switch (event.keyCode) {
-    // space bar pauses cell update and camera
+    // space bar pauses cell update
     case 32:
       {
         pause = !pause;
-        pauseCam = !pauseCam;
         break;
       }
   }
@@ -166,8 +165,8 @@ function onWindowKeyDown(event) {
 /* mouse button event handler */
 function onmousedown() {
   switch (event.button) {
-    // middle mouse button toggles camera only
-    case 2:
+    // left mouse button toggles camera rotation
+    case 0:
       {
         pauseCam = !pauseCam;
         break;
