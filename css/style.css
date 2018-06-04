@@ -17,12 +17,17 @@ body {
   margin-right: 10px;
 }
 
-.navbar-inner {
-  background: transparent;
+.navbar-nav>a:hover,
+.navbar-brand:hover {
+  color: #ffffff !important;
+  font-weight: bold;
 }
 
+
+
 .bg-blue {
-  background-color: #1565c0DD;
+  background-color: #1565c0;
+  opacity: 0.8;
 }
 
 /* carousel */
@@ -66,13 +71,14 @@ body {
 }
 
 .btn-about {
-  background-color: #ffffff00;
+  background-color: #00000000;
   color: white;
   border: 2px solid;
 }
 
 .btn-about:hover {
-  background-color: #1565c0DD;
+  background-color: #1565c0;
+  opacity: 0.8;
   color: white;
 }
 
@@ -93,7 +99,7 @@ li {
 
 .img-hoverable:hover {
   transform: scale(1.02);
-  box-shadow: 10px 10px #1565c0DD;
+  box-shadow: 10px 10px #1565c0;
 }
 
 /* footer */
@@ -110,7 +116,7 @@ footer {
 }
 
 .fab:hover {
-  color: #ffeb3b;
+  color: #ffeb3b !important;
 }
 
 /* @media */
