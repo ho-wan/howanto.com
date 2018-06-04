@@ -109,6 +109,10 @@ footer {
   color: #fff;
 }
 
+.fab:hover {
+  color: #ffeb3b;
+}
+
 /* @media */
 @media (max-width: 500px), (max-height: 500px) {
   .carousel-caption {

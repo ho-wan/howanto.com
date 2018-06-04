@@ -4,6 +4,7 @@ $(document).ready(function () {
   removeHash();
   // wait for images and load functions to complete before using getElement.
   window.onload = function () {
+    removeHash();
 
     // Smooth scroll using jQuery with offset
     const scroll_speed = 800;
