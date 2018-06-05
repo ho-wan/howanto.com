@@ -115,7 +115,7 @@ function initDOM() {
   // init UI variables
   show_panel = true;
   show_stats = false;
-  togglePanel();
+  // togglePanel();
   initButtons();
   document.getElementById("btn1").addEventListener("click", function () {
     btnClick(1);

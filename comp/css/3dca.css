@@ -114,8 +114,32 @@ div.transbox {
   background-color: #000000;
   opacity: 0.8;
   border: 2px solid #1565c0;
-  /* max-width: 80vw; */
   width: 300px;
   height: 400px;
+  max-width: 80vw;
+  max-height: 80vh;
   color: #ffffff;
+}
+
+@media (max-height: 350px) {
+  div.transbox {
+    transform: scale(0.8);
+    max-width: 100vw;
+    left: 20px;
+    top: 50px;
+  }
+}
+
+@media (max-height: 500px) and (orientation:landscape) {
+  div.transbox {
+    width: 550px;
+    height: 220px;
+  }
+
+  #about-txt {
+    left: 250px;
+    top: 10px;
+    width: auto;
+    line-height: 25px;
+  }
 }
