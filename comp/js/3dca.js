@@ -234,7 +234,7 @@ function onWindowResize() {
 /* keyboard event handler */
 function onWindowKeyDown(event) {
   switch (event.keyCode) {
-    // z pauses light
+    // z pauses light movement
     case 90:
     case 122:
       btn2_state = toggleButton(btn2_state, "#btn2");
@@ -247,6 +247,7 @@ function onWindowKeyDown(event) {
       btn3_state = toggleButton(btn3_state, "#btn3");
       pause = !pause;
       break;
+      // c pauses camera rotation
     case 67:
     case 99:
       btn4_state = toggleButton(btn4_state, "#btn4");
@@ -332,10 +333,6 @@ function addOsc(makeOscFunc, probOscSpawn, padding) {
     let mz = padding + Math.floor(Math.random() * (numZ - padding * 2));
     makeOscFunc(mx, my, mz);
   }
-}
-
-function callGUI() {
-  // TODO: call GUI
 }
 // adds new cells every cycle
 function addNewCells() {
@@ -594,14 +591,6 @@ function mod(n, m) {
 };
 // loops through all cells, counts neighbours, sets next state
 function getCellState() {
-  //reset neighbour count
-  for (let i = 0; i < numX; i++) {
-    for (let j = 0; j < numY; j++) {
-      for (let k = 0; k < numZ; k++) {
-        cells[i][j][k]._neighbours = 0;
-      }
-    }
-  }
   // count neighbours
   for (let i = 0; i < numX; i++) {
     for (let j = 0; j < numY; j++) {
@@ -610,18 +599,15 @@ function getCellState() {
       }
     }
   }
-  // set next state
+  // set next state and reset neighbour count
   for (let i = 0; i < numX; i++) {
     for (let j = 0; j < numY; j++) {
       for (let k = 0; k < numZ; k++) {
-        if (cells[i][j][k]._neighbours !== 0) {
-          // console.log(i, j, k, cells[i][j][k]._neighbours);
-        }
         setNextState(i, j, k, cells[i][j][k]._neighbours);
+        cells[i][j][k]._neighbours = 0;
       }
     }
   }
-  // console.log(iterationCount);
 }
 // sets nextState of cell depending on rules
 function setNextState(i, j, k, aliveCount) {
@@ -641,24 +627,6 @@ function setNextState(i, j, k, aliveCount) {
     }
   }
 }
-// returns number of cells alive surrounding the current cell
-// function getAliveNeighbours(i, j, k) {
-//   // count number of alive neighbours
-//   cells[i][j][k]._aliveCount = 0;
-//   for (let ni = -1; ni <= 1; ni++) {
-//     for (let nj = -1; nj <= 1; nj++) {
-//       for (let nk = -1; nk <= 1; nk++) {
-//         if (!(ni === 0 && nj === 0 && nk === 0)) {
-//           // wrap around sides using positive modulo function
-//           if (cells[mod(i + ni, numX)][mod(j + nj, numY)][mod(k + nk, numZ)]._state) {
-//             cells[i][j][k]._aliveCount++;
-//           }
-//         }
-//       }
-//     }
-//   }
-//   return cells[i][j][k]._aliveCount;
-// }
 // returns number of cells alive surrounding the current cell improved
 function getAliveNeighboursImproved(i, j, k) {
   // if cell is on, set adjacent neighbour count +1
@@ -693,7 +661,6 @@ function drawCells() {
           }
           scene.add(mesh);
         } else if (cells[i][j][k]._state === true && cells[i][j][k]._nextState === false) {
-          // use tween.js to fade out cubes : TODO fix opacity reset for oscillators
           cells[i][j][k]._tweenOut = new TWEEN.Tween(mesh.material)
             .to({
               opacity: 0
@@ -758,7 +725,6 @@ class CellularAutomata {
     this._state = false;
     this._nextState = false;
     this._neighbours = 0;
-    this._aliveCount = 0;
     this._tweenOut = null;
 
     this._cellColor = new THREE.Color(x / numX, y / numY, z / numZ);
@@ -789,12 +755,7 @@ function callCheckTime() {
   currentTime = new Date().getTime();
   if (checkTime(stateUpdatePeriod, currentTime, previousStateTime) && !pause) {
     previousStateTime = currentTime;
-    // let t0 = performance.now();
     getCellState();
-    // let t1 = performance.now();
-    // let t01 = t1 - t0;
-    // console.log("Loop took " + (t01) + " milliseconds.");
-
     if (checkTime(spawnPeriod, currentTime, previousSpawnTime) && !pause) {
       addNewCells();
       previousSpawnTime = currentTime;
