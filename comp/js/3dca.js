@@ -115,7 +115,7 @@ function initDOM() {
   // init UI variables
   show_panel = true;
   show_stats = false;
-  // togglePanel();
+  togglePanel();
   initButtons();
   document.getElementById("btn1").addEventListener("click", function () {
     btnClick(1);
@@ -151,7 +151,6 @@ function togglePanel() {
   } else {
     $(".panel").addClass("disable-panel");
   }
-  console.log("show_panel is: " + show_panel);
 }
 // toggles stats panel
 function toggleStats(btn5_state) {
@@ -230,7 +229,7 @@ function onWindowResize() {
   camera.aspect = WIDTH / HEIGHT;
   camera.updateProjectionMatrix();
   // reload page from cache to fix UI scaling.
-  location.reload(false);
+  // location.reload(false);
 }
 /* keyboard event handler */
 function onWindowKeyDown(event) {

@@ -115,18 +115,24 @@ div.transbox {
   opacity: 0.8;
   border: 2px solid #1565c0;
   width: 300px;
-  height: 400px;
+  height: 410px;
   max-width: 80vw;
   max-height: 80vh;
   color: #ffffff;
 }
 
-@media (max-height: 350px) {
+@media (max-height: 370px) {
   div.transbox {
     transform: scale(0.8);
     max-width: 100vw;
     left: 20px;
     top: 50px;
+  }
+}
+
+@media (max-width: 370px) {
+  #about-txt {
+    font-size: 0.8em;
   }
 }
 
