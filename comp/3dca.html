@@ -15,6 +15,11 @@
   <!-- LOCAL -->
   <link rel="stylesheet" href="/css/style.css">
   <style>
+    .navbar {
+      font-size: 1.3em;
+      min-height: 60px;
+    }
+
     body {
       margin-top: 0;
     }
@@ -35,6 +40,89 @@
     #threejs {
       height: 100vh;
       width: 100vw;
+    }
+
+    .button {
+      /* z-index: 1; */
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background-color: #333;
+      border: 2px solid #fff;
+      color: #fff;
+    }
+
+    .button:hover {
+      background-color: #666;
+    }
+
+    .disabledbutton {
+      pointer-events: none;
+      opacity: 0 !important;
+    }
+
+    .enabledbutton {
+      pointer-events: auto;
+      opacity: 1.0;
+    }
+
+    .panel {
+      position: inherit;
+      display: block;
+    }
+
+    #btn1 {
+      position: absolute;
+      display: block;
+      left: 10px;
+      top: 70px;
+    }
+
+    #btn2 {
+      left: 10px;
+      top: 10px;
+    }
+
+    #btn3 {
+      left: 10px;
+      top: 60px;
+    }
+
+    .btn-txt {
+      left: 50px;
+      top: 5px;
+      width: max-content;
+    }
+
+    #btn4 {
+      left: 10px;
+      top: 110px;
+    }
+
+    #about-txt {
+      left: 10px;
+      top: 160px;
+      width: auto;
+    }
+
+    div.transbox {
+      position: absolute;
+      display: block;
+      left: 60px;
+      top: 70px;
+      border-radius: 12px;
+      background-color: #000000;
+      opacity: 0.8;
+      border: 2px solid #1565c0;
+      /* max-width: 80vw; */
+      width: 300px;
+      height: 400px;
+    }
+
+    div.transbox p {
+      margin: 2%;
+      font-weight: bold;
+      color: #ffffff;
     }
   </style>
 
@@ -75,7 +163,32 @@
   </div>
   <!-- 1:canvas -->
   <div id="threejs"></div>
-  <!-- 2:footer -->
+
+  <!-- 2:UI -->
+  <div class="container-fluid">
+    <div class="buttons">
+      <button class="button" id="btn1">
+        <i class="fas fa-question"></i>
+      </button>
+    </div>
+    <div class="panel transbox">
+      <button class="panel button" id="btn2">
+        <i class="fas fa-question"></i>
+        <p class="panel btn-txt" id="btn2-txt">Move Light</p>
+      </button>
+      <button class="panel button" id="btn3">
+        <i class="fas fa-question"></i>
+        <p class="panel btn-txt" id="btn3-txt">Update Cells</p>
+      </button>
+      <button class="panel button" id="btn4">
+        <i class="fas fa-question"></i>
+        <p class="panel btn-txt" id="btn4-txt">Move Camera</p>
+      </button>
+      <p class="panel" id="about-txt">This is some text that is placed in the transparent box.</p>
+    </div>
+  </div>
+
+  <!-- 3:footer -->
   <div id="import-footer-in">
     <footer class="container-fluid bg-blue text-center">
       <div class="info-box">

@@ -3,7 +3,7 @@
  * Assignment A1 for Morphogenetic Programming module of Architectural Computation MSc at UCL.
  * Originally created using Processing, now created using three.js
  */
-
+var show_panel = true;
 // Show stats?
 var show_stats = false;
 // three.js scene variables
@@ -25,7 +25,7 @@ var cells, rule;
 // interaction and cam
 var isUserInteracting, pause, pauseCam, radX, radY, camRadius, rotateX, rotateY;
 // light rotation
-var dirLightMain, lightRadX, lightRadY, lightRadius, lightRotateX, lightRotateY, lightHue;
+var dirLightMain, lightRadX, lightRadY, lightRadius, lightRotateX, lightRotateY, pauseLight;
 // document container
 var container;
 
@@ -61,7 +61,6 @@ function initVariables() {
   lightRotateY = -0.002;
   lightRadX = 0;
   lightRadY = 0;
-  lightHue = 0;
   // following variables intended to be left as default
   CELLSIZE = 1;
   HEIGHT = container.clientHeight;
@@ -77,7 +76,7 @@ function initVariables() {
 function initScene() {
   // get HTML container
   container = document.getElementById('threejs');
-
+  initDOM();
   // initialize variables
   initVariables();
   scene = new THREE.Scene();
@@ -119,6 +118,53 @@ function initScene() {
   addGliders(numStartingGliders);
   drawCells();
 }
+// attach event listeners to HTML elements
+function initDOM() {
+  document.getElementById("btn1").addEventListener("click", function () {
+    btnClick(1);
+  });
+  document.getElementById("btn2").addEventListener("click", function () {
+    btnClick(2);
+  });
+  document.getElementById("btn3").addEventListener("click", function () {
+    btnClick(3);
+  });
+  document.getElementById("btn4").addEventListener("click", function () {
+    btnClick(4);
+  });
+}
+
+function togglePanel() {
+  show_panel = !show_panel;
+  if (show_panel) {
+    // $(".transbox *").removeAttr("disabled");
+    $(".panel").removeClass("disabledbutton");
+  } else {
+    // $(".transbox *").attr("disabled", "disabled").off('click');
+    $(".panel").addClass("disabledbutton");
+  }
+
+  console.log("show_panel is: " + show_panel);
+}
+// manage button clicks
+function btnClick(btn) {
+  switch (btn) {
+    case 1:
+      togglePanel();
+      console.log("button 1 clicked");
+      break;
+    case 2:
+      console.log("button 2 clicked");
+      break;
+    case 3:
+      console.log("button 3 clicked");
+      break;
+    case 4:
+      console.log("button 4 clicked");
+      break;
+  }
+
+}
 // create lights
 function createLights() {
   var hemiLight = new THREE.HemisphereLight(0xffffbb, 0x080820, 0.4);
@@ -150,27 +196,36 @@ function onWindowResize() {
   renderer.setSize(WIDTH, HEIGHT);
   camera.aspect = WIDTH / HEIGHT;
   camera.updateProjectionMatrix();
+  // reload page to fix UI scaling.
+  location.reload();
 }
 /* keyboard event handler */
 function onWindowKeyDown(event) {
   switch (event.keyCode) {
-    // space bar pauses cell update
+    // z pauses light
+    case 90:
+    case 122:
+      pauseLight = !pauseLight;
+      break;
+    // space bar or x pauses cell update
     case 32:
-      {
-        pause = !pause;
-        break;
-      }
+    case 88:
+    case 120:
+      pause = !pause;
+      break;
+    case 67:
+    case 99:
+      pauseCam = !pauseCam;
+      break;
   }
 }
 /* mouse button event handler */
 function onmousedown() {
   switch (event.button) {
-    // left mouse button toggles camera rotation
-    case 0:
-      {
-        pauseCam = !pauseCam;
-        break;
-      }
+    // right mouse button toggles camera rotation
+    case 2:
+      pauseCam = !pauseCam;
+      break;
   }
 }
 // draws boundary box, axes helper and bottom cross
@@ -614,7 +669,6 @@ function rotateLight() {
   dirLightMain.position.set(x, y, z);
   dirLightMain.lookAt(new THREE.Vector3(0, 0, 0));
 
-  lightHue++;
   // dirLightMain.color.set;
 }
 // CA class
@@ -673,7 +727,7 @@ function animate() {
   TWEEN.update();
 
   if (!pauseCam) rotateCam();
-  rotateLight();
+  if (!pauseLight) rotateLight();
   callCheckTime();
 
   renderer.render(scene, camera);
