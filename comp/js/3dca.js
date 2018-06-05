@@ -237,16 +237,19 @@ function onWindowKeyDown(event) {
     // z pauses light
     case 90:
     case 122:
+      btn2_state = toggleButton(btn2_state, "#btn2");
       pauseLight = !pauseLight;
       break;
       // space bar or x pauses cell update
     case 32:
     case 88:
     case 120:
+      btn3_state = toggleButton(btn3_state, "#btn3");
       pause = !pause;
       break;
     case 67:
     case 99:
+      btn4_state = toggleButton(btn4_state, "#btn4");
       pauseCam = !pauseCam;
       break;
   }
@@ -256,8 +259,11 @@ function onmousedown() {
   switch (event.button) {
     // right mouse button toggles camera rotation
     case 2:
+      btn2_state = toggleButton(btn2_state, "#btn2");
       pauseLight = !pauseLight;
+      btn3_state = toggleButton(btn3_state, "#btn3");
       pause = !pause;
+      btn4_state = toggleButton(btn4_state, "#btn4");
       pauseCam = !pauseCam;
       break;
   }
