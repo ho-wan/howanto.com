@@ -95,7 +95,8 @@ footer {
 .btn-txt {
   left: 50px;
   top: 5px;
-  width: max-content;
+  width: 200px;
+  text-align: left;
 }
 
 #about-txt {
@@ -116,15 +117,15 @@ div.transbox {
   border: 2px solid #1565c0;
   width: 300px;
   height: 410px;
-  max-width: 80vw;
-  max-height: 80vh;
+  max-width: 90vw;
+  max-height: 90vh;
   color: #ffffff;
 }
 
 @media (max-height: 370px) {
   div.transbox {
     transform: scale(0.8);
-    max-width: 100vw;
+    max-width: 110vw;
     left: 20px;
     top: 50px;
   }
