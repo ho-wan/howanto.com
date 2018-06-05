@@ -602,6 +602,7 @@ function getCellState() {
       }
     }
   }
+
 }
 // sets nextState of cell depending on rules
 function setNextState(i, j, k, aliveCount) {
@@ -752,7 +753,12 @@ function callCheckTime() {
   currentTime = new Date().getTime();
   if (checkTime(stateUpdatePeriod, currentTime, previousStateTime) && !pause) {
     previousStateTime = currentTime;
+    let t0 = performance.now();
     getCellState();
+    let t1 = performance.now();
+    let t01 = t1 - t0;
+    console.log("Loop took " + (t01) + " milliseconds.");
+
     if (checkTime(spawnPeriod, currentTime, previousSpawnTime) && !pause) {
       addNewCells();
       previousSpawnTime = currentTime;
