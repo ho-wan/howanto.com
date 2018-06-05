@@ -1,0 +1,121 @@
+.navbar {
+  font-size: 1.3em;
+  min-height: 60px;
+}
+
+body {
+  margin-top: 0;
+}
+
+canvas {
+  padding: 0;
+  margin: auto;
+  display: block;
+  width: 100%;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  height: 60px !important;
+}
+
+#threejs {
+  height: 100vh;
+  width: 100vw;
+}
+
+.button {
+  /* z-index: 1; */
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background-color: #333;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.button:hover {
+  background-color: #666;
+}
+
+.disable-panel {
+  pointer-events: none;
+  opacity: 0 !important;
+}
+
+.panel {
+  position: inherit;
+  display: block;
+}
+
+.panel .button {
+  background-color: red;
+}
+
+.panel .button:hover {
+  background-color: orange;
+}
+
+.button-on {
+  background-color: green !important;
+}
+
+.button-on:hover {
+  background-color: greenyellow !important;
+}
+
+#btn1 {
+  position: absolute;
+  display: block;
+  left: 10px;
+  top: 70px;
+}
+
+#btn2 {
+  left: 10px;
+  top: 10px;
+}
+
+#btn3 {
+  left: 10px;
+  top: 60px;
+}
+
+#btn4 {
+  left: 10px;
+  top: 110px;
+}
+
+#btn5 {
+  left: 10px;
+  top: 160px;
+}
+
+.btn-txt {
+  left: 50px;
+  top: 5px;
+  width: max-content;
+}
+
+#about-txt {
+  left: 10px;
+  top: 210px;
+  width: auto;
+  line-height: 25px;
+}
+
+div.transbox {
+  position: absolute;
+  display: block;
+  left: 60px;
+  top: 70px;
+  border-radius: 12px;
+  background-color: #000000;
+  opacity: 0.8;
+  border: 2px solid #1565c0;
+  /* max-width: 80vw; */
+  width: 300px;
+  height: 400px;
+  color: #ffffff;
+}

@@ -1,11 +1,6 @@
 /**
- * 3D Game of Life: Cellular Automata; by Ho-Wan To; Feb 2018
- * Assignment A1 for Morphogenetic Programming module of Architectural Computation MSc at UCL.
- * Originally created using Processing, now created using three.js
+ * 3D Game of Life: Cellular Automata, by Ho-Wan To © 2018
  */
-var show_panel = true;
-// Show stats?
-var show_stats = false;
 // three.js scene variables
 var scene, camera, renderer, orbitCam, stats;
 // screen variables
@@ -26,8 +21,8 @@ var cells, rule;
 var isUserInteracting, pause, pauseCam, radX, radY, camRadius, rotateX, rotateY;
 // light rotation
 var dirLightMain, lightRadX, lightRadY, lightRadius, lightRotateX, lightRotateY, pauseLight;
-// document container
-var container;
+// document container and UI
+var container, show_panel, show_stats, btn2_state, btn3_state, btn4_state, btn5_state;
 
 // set initial variables here
 function initVariables() {
@@ -107,9 +102,6 @@ function initScene() {
   // add stats - 0: fps, 1: ms, 2: mb, 3+: custom
   stats = new Stats();
   stats.showPanel(0);
-  if (show_stats) {
-    container.appendChild(stats.dom);
-  }
 
   // init functions
   createLights();
@@ -120,6 +112,11 @@ function initScene() {
 }
 // attach event listeners to HTML elements
 function initDOM() {
+  // init UI variables
+  show_panel = true;
+  show_stats = false;
+  togglePanel();
+  initButtons();
   document.getElementById("btn1").addEventListener("click", function () {
     btnClick(1);
   });
@@ -132,35 +129,71 @@ function initDOM() {
   document.getElementById("btn4").addEventListener("click", function () {
     btnClick(4);
   });
+  document.getElementById("btn5").addEventListener("click", function () {
+    btnClick(5);
+  });
 }
-
+// init buttons
+function initButtons() {
+  btn2_state = true;
+  btn3_state = true
+  btn4_state = true;
+  btn5_state = false;
+  $("#btn2").addClass("button-on");
+  $("#btn3").addClass("button-on");
+  $("#btn4").addClass("button-on");
+}
+// toggles UI panel
 function togglePanel() {
   show_panel = !show_panel;
   if (show_panel) {
-    // $(".transbox *").removeAttr("disabled");
-    $(".panel").removeClass("disabledbutton");
+    $(".panel").removeClass("disable-panel");
   } else {
-    // $(".transbox *").attr("disabled", "disabled").off('click');
-    $(".panel").addClass("disabledbutton");
+    $(".panel").addClass("disable-panel");
   }
-
   console.log("show_panel is: " + show_panel);
 }
+// toggles stats panel
+function toggleStats(btn5_state) {
+  show_stats = btn5_state;
+  if (show_stats) {
+    container.appendChild(stats.dom);
+  } else {
+    container.removeChild(stats.dom);
+  }
+}
+// toggles button
+function toggleButton(btn_state, btn_id) {
+  btn_state = !btn_state;
+  if (btn_state) {
+    $(btn_id).addClass("button-on");
+  } else {
+    $(btn_id).removeClass("button-on");
+  }
+  return btn_state;
+}
+
 // manage button clicks
 function btnClick(btn) {
   switch (btn) {
     case 1:
       togglePanel();
-      console.log("button 1 clicked");
       break;
     case 2:
-      console.log("button 2 clicked");
+      btn2_state = toggleButton(btn2_state, "#btn2");
+      pauseLight = !pauseLight;
       break;
     case 3:
-      console.log("button 3 clicked");
+      btn3_state = toggleButton(btn3_state, "#btn3");
+      pause = !pause;
       break;
     case 4:
-      console.log("button 4 clicked");
+      btn4_state = toggleButton(btn4_state, "#btn4");
+      pauseCam = !pauseCam;
+      break;
+    case 5:
+      btn5_state = toggleButton(btn5_state, "#btn5");
+      toggleStats(btn5_state);
       break;
   }
 
@@ -196,8 +229,8 @@ function onWindowResize() {
   renderer.setSize(WIDTH, HEIGHT);
   camera.aspect = WIDTH / HEIGHT;
   camera.updateProjectionMatrix();
-  // reload page to fix UI scaling.
-  location.reload();
+  // reload page from cache to fix UI scaling.
+  location.reload(false);
 }
 /* keyboard event handler */
 function onWindowKeyDown(event) {
@@ -207,7 +240,7 @@ function onWindowKeyDown(event) {
     case 122:
       pauseLight = !pauseLight;
       break;
-    // space bar or x pauses cell update
+      // space bar or x pauses cell update
     case 32:
     case 88:
     case 120:
@@ -224,6 +257,8 @@ function onmousedown() {
   switch (event.button) {
     // right mouse button toggles camera rotation
     case 2:
+      pauseLight = !pauseLight;
+      pause = !pause;
       pauseCam = !pauseCam;
       break;
   }

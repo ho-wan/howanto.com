@@ -14,117 +14,7 @@
     crossorigin="anonymous">
   <!-- LOCAL -->
   <link rel="stylesheet" href="/css/style.css">
-  <style>
-    .navbar {
-      font-size: 1.3em;
-      min-height: 60px;
-    }
-
-    body {
-      margin-top: 0;
-    }
-
-    canvas {
-      padding: 0;
-      margin: auto;
-      display: block;
-      width: 100%;
-    }
-
-    footer {
-      position: fixed;
-      bottom: 0;
-      height: 60px !important;
-    }
-
-    #threejs {
-      height: 100vh;
-      width: 100vw;
-    }
-
-    .button {
-      /* z-index: 1; */
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
-      background-color: #333;
-      border: 2px solid #fff;
-      color: #fff;
-    }
-
-    .button:hover {
-      background-color: #666;
-    }
-
-    .disabledbutton {
-      pointer-events: none;
-      opacity: 0 !important;
-    }
-
-    .enabledbutton {
-      pointer-events: auto;
-      opacity: 1.0;
-    }
-
-    .panel {
-      position: inherit;
-      display: block;
-    }
-
-    #btn1 {
-      position: absolute;
-      display: block;
-      left: 10px;
-      top: 70px;
-    }
-
-    #btn2 {
-      left: 10px;
-      top: 10px;
-    }
-
-    #btn3 {
-      left: 10px;
-      top: 60px;
-    }
-
-    .btn-txt {
-      left: 50px;
-      top: 5px;
-      width: max-content;
-    }
-
-    #btn4 {
-      left: 10px;
-      top: 110px;
-    }
-
-    #about-txt {
-      left: 10px;
-      top: 160px;
-      width: auto;
-    }
-
-    div.transbox {
-      position: absolute;
-      display: block;
-      left: 60px;
-      top: 70px;
-      border-radius: 12px;
-      background-color: #000000;
-      opacity: 0.8;
-      border: 2px solid #1565c0;
-      /* max-width: 80vw; */
-      width: 300px;
-      height: 400px;
-    }
-
-    div.transbox p {
-      margin: 2%;
-      font-weight: bold;
-      color: #ffffff;
-    }
-  </style>
+  <link rel="stylesheet" href="./css/3dca.css">
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120258112-1"></script>
@@ -173,18 +63,30 @@
     </div>
     <div class="panel transbox">
       <button class="panel button" id="btn2">
-        <i class="fas fa-question"></i>
-        <p class="panel btn-txt" id="btn2-txt">Move Light</p>
+        <i class="fas fa-sun"></i>
+        <p class="panel btn-txt" id="btn2-txt">Stop light</p>
       </button>
       <button class="panel button" id="btn3">
-        <i class="fas fa-question"></i>
-        <p class="panel btn-txt" id="btn3-txt">Update Cells</p>
+        <i class="fas fa-pause"></i>
+        <p class="panel btn-txt" id="btn3-txt">Toggle cell update</p>
       </button>
       <button class="panel button" id="btn4">
-        <i class="fas fa-question"></i>
-        <p class="panel btn-txt" id="btn4-txt">Move Camera</p>
+        <i class="fas fa-camera"></i>
+        <p class="panel btn-txt" id="btn4-txt">Stop camera</p>
       </button>
-      <p class="panel" id="about-txt">This is some text that is placed in the transparent box.</p>
+      <button class="panel button" id="btn5">
+        <i class="fas fa-chart-bar"></i>
+        <p class="panel btn-txt" id="btn5-txt">Toggle Stats</p>
+      </button>
+      <div class="panel" id="about-txt">
+        <h5><u>About</u></h5>
+        <p class="line-break"></p>
+        <p>3D Game of Life (Cellular Automata)<br>
+        Created by Ho-Wan To<br>
+        New glider/oscillator every 0.5s<br>
+        Uses three.js, Tween.js<br>
+        Fork me on <a href="https://github.com/ho-wan/howanto.com"><b>GitHub!</b></a></p>
+      </div>
     </div>
   </div>
 
