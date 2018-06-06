@@ -18,7 +18,7 @@ var numStartingGliders, spawnNewGliders, spawnNewCells, probOscSpawn;
 // store CA cells and rule
 var cells, rule;
 // interaction and cam
-var isUserInteracting, pause, pauseCam, radX, radY, camRadius, rotateX, rotateY;
+var pause, pauseCam, radX, radY, camRadius, rotateX, rotateY;
 // light rotation
 var dirLightMain, lightRadX, lightRadY, lightRadius, lightRotateX, lightRotateY, pauseLight;
 // document container and UI
@@ -41,9 +41,11 @@ function initVariables() {
   fadeOut = 300;
   // probability of adding new Oscillators
   probOscSpawn = 0.05;
-  // camera interactions
-  isUserInteracting = false;
+  // pause toggles
   pause = false;
+  pauseCam = false;
+  pauseLight = false;
+  // camera
   FOV = 90;
   camRadius = 20;
   rotateX = 0.01;
@@ -85,10 +87,6 @@ function initScene() {
   container.appendChild(renderer.domElement);
   // set renderer properties
   renderer.shadowCameraFov = camera.fov;
-  renderer.shadowMapBias = 0.001;
-  renderer.shadowMapDarkness = 0.5;
-  renderer.shadowMap.enabled = true;
-  renderer.shadowMapSoft = true;
   // Use OrbitControls camera
   orbitCam = new THREE.OrbitControls(camera);
   orbitCam.enablePan = false;
