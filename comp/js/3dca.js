@@ -96,7 +96,8 @@ function initScene() {
   renderer.domElement.addEventListener('mousedown', onmousedown, false);
   window.addEventListener('keydown', onWindowKeyDown, false);
   window.addEventListener('resize', onWindowResize, false);
-
+  // handle touch taps
+  handleTouch();
   // add stats - 0: fps, 1: ms, 2: mb, 3+: custom
   stats = new Stats();
   stats.showPanel(0);
@@ -262,15 +263,28 @@ function onWindowKeyDown(event) {
       break;
   }
 }
+/* handle touch */
+function handleTouch() {
+  $(renderer.domElement)
+    .on('touchstart', function () {
+      $(this).data('moved', '0');
+    })
+    .on('touchmove', function () {
+      $(this).data('moved', '1');
+    })
+    .on('touchend', function () {
+      if ($(this).data('moved') == 0) {
+        btn3_state = toggleButton(btn3_state, "#btn3");
+        pause = !pause;
+      } else {
+        // dragged
+      }
+    });
+}
 /* mouse button event handler */
 function onmousedown() {
   switch (event.button) {
-    // left mouse button toggles update
-    case 0:
-      btn3_state = toggleButton(btn3_state, "#btn3");
-      pause = !pause;
-      break;
-      // right mouse button toggles all states
+    // right mouse button toggles all states
     case 2:
       btn2_state = toggleButton(btn2_state, "#btn2");
       pauseLight = !pauseLight;
