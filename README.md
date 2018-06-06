@@ -4,6 +4,7 @@
 ## My personal website, created with Bootstrap and jQuery.
 
 - ### Includes my 3D Game of Life (Cellular Automata) code made with three.js.
+- ### Cellular Automata code can be found at /comp/js/3dca.js
 
 ## [Go to the 3D Game of Life!](http://www.howanto.com/comp/3dca.html)
 
