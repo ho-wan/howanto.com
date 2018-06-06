@@ -100,9 +100,54 @@ footer {
   text-align: left;
 }
 
+.slidecontainer {
+  position: relative;
+  display: inline-flex;
+  left: 10px;
+  width: 250px;
+  top: 210px;
+}
+
+.slider {
+  position: absolute;
+  left: 120px;
+  top: 2px;
+  -webkit-appearance: none;
+  width: 120px;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
 #about-txt {
   left: 10px;
-  top: 210px;
+  top: 230px;
   width: auto;
   line-height: 25px;
 }
@@ -114,10 +159,10 @@ div.transbox {
   top: 70px;
   border-radius: 12px;
   background-color: #000000;
-  opacity: 0.8;
+  opacity: 0.7;
   border: 2px solid #1565c0;
   width: 300px;
-  height: 410px;
+  height: 420px;
   max-width: 90vw;
   max-height: 90vh;
   color: #ffffff;
@@ -126,13 +171,16 @@ div.transbox {
 @media (max-height: 370px) {
   div.transbox {
     transform: scale(0.8);
-    max-width: 110vw;
-    left: 20px;
-    top: 50px;
+    max-width: 110%;
+    left: 10px;
+    top: 40px;
   }
 }
 
 @media (max-width: 370px) {
+  div.transbox {
+    max-width: 80%;
+  }
   #about-txt {
     font-size: 0.8em;
   }
@@ -141,9 +189,8 @@ div.transbox {
 @media (max-height: 500px) and (orientation:landscape) {
   div.transbox {
     width: 550px;
-    height: 220px;
+    height: 240px;
   }
-
   #about-txt {
     left: 250px;
     top: 10px;

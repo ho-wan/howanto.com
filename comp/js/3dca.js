@@ -22,7 +22,7 @@ var pause, pauseCam, radX, radY, camRadius, rotateX, rotateY;
 // light rotation
 var dirLightMain, lightRadX, lightRadY, lightRadius, lightRotateX, lightRotateY, pauseLight;
 // document container and UI
-var container, show_panel, show_stats, btn2_state, btn3_state, btn4_state, btn5_state;
+var container, show_panel, show_stats, btn2_state, btn3_state, btn4_state, btn5_state, slider, output;
 
 // set initial variables here
 function initVariables() {
@@ -37,8 +37,8 @@ function initVariables() {
   spawnPeriod = 500;
   spawnNewGliders = 1;
   spawnNewCells = 0;
-  // time for dead cells to fade out using Tween
-  fadeOut = 300;
+  // time for dead cells to fade out using Tween - overwritten by slider
+  // fadeOut = 300;
   // probability of adding new Oscillators
   probOscSpawn = 0.05;
   // pause toggles
@@ -88,12 +88,13 @@ function initScene() {
   // set renderer properties
   renderer.shadowCameraFov = camera.fov;
   // Use OrbitControls camera
-  orbitCam = new THREE.OrbitControls(camera);
+  orbitCam = new THREE.OrbitControls(camera, renderer.domElement);
   orbitCam.enablePan = false;
   camera.position.set(20, 10, 10);
   camera.lookAt(new THREE.Vector3(0, 0, 0));
   // add Event Listeners
-  window.addEventListener('mousedown', onmousedown, false);
+  // window.addEventListener('mousedown', onmousedown, false);
+  renderer.domElement.addEventListener('mousedown', onmousedown, false);
   window.addEventListener('keydown', onWindowKeyDown, false);
   window.addEventListener('resize', onWindowResize, false);
 
@@ -113,7 +114,7 @@ function initDOM() {
   // init UI variables
   show_panel = true;
   show_stats = false;
-  togglePanel();
+  // togglePanel();
   initButtons();
   document.getElementById("btn1").addEventListener("click", function () {
     btnClick(1);
@@ -130,6 +131,15 @@ function initDOM() {
   document.getElementById("btn5").addEventListener("click", function () {
     btnClick(5);
   });
+  // slider
+  slider = document.getElementById("slider1");
+  slider_value = document.getElementById("fade-time");
+  slider_value.innerHTML = slider.value;
+  fadeOut = this.value * 1000;
+  slider.oninput = function () {
+    slider_value.innerHTML = this.value;
+    fadeOut = this.value * 1000;
+  }
 }
 // init buttons
 function initButtons() {
@@ -256,7 +266,12 @@ function onWindowKeyDown(event) {
 /* mouse button event handler */
 function onmousedown() {
   switch (event.button) {
-    // right mouse button toggles camera rotation
+    // left mouse button toggles update
+    case 0:
+      btn3_state = toggleButton(btn3_state, "#btn3");
+      pause = !pause;
+      break;
+      // right mouse button toggles all states
     case 2:
       btn2_state = toggleButton(btn2_state, "#btn2");
       pauseLight = !pauseLight;
