@@ -38,7 +38,7 @@ function initVariables() {
   spawnNewGliders = 1;
   spawnNewCells = 0;
   // time for dead cells to fade out using Tween - overwritten by slider
-  // fadeOut = 300;
+  // fadeOut = 600;
   // probability of adding new Oscillators
   probOscSpawn = 0.05;
   // pause toggles
@@ -93,7 +93,6 @@ function initScene() {
   camera.position.set(20, 10, 10);
   camera.lookAt(new THREE.Vector3(0, 0, 0));
   // add Event Listeners
-  // window.addEventListener('mousedown', onmousedown, false);
   renderer.domElement.addEventListener('mousedown', onmousedown, false);
   window.addEventListener('keydown', onWindowKeyDown, false);
   window.addEventListener('resize', onWindowResize, false);
@@ -114,7 +113,7 @@ function initDOM() {
   // init UI variables
   show_panel = true;
   show_stats = false;
-  // togglePanel();
+  togglePanel();
   initButtons();
   document.getElementById("btn1").addEventListener("click", function () {
     btnClick(1);
@@ -135,7 +134,7 @@ function initDOM() {
   slider = document.getElementById("slider1");
   slider_value = document.getElementById("fade-time");
   slider_value.innerHTML = slider.value;
-  fadeOut = this.value * 1000;
+  fadeOut = slider.value * 1000;
   slider.oninput = function () {
     slider_value.innerHTML = this.value;
     fadeOut = this.value * 1000;
