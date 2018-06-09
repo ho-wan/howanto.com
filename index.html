@@ -5,6 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Ho-Wan To's personal website. Software engineer, full-stack and back-end web developer based in London, UK. VS code extension developer 'Setting Toggle'. Experienced structural engineer. 3D Cellular Automata : Game of Life.">
+  <meta name="keywords" content="Ho-Wan, Ho-Wan To, London, Software engineer, full-stack, back-end, web developer, Structural engineer, professional, VS code, extension developer, 3D Cellular Automata, 3D Game of Life, JavaScript, Python, Node.js, Express.js, Django">
+  <meta name="author" content="Ho-Wan To">
   <title>Ho-Wan's Website</title>
   <!-- FONTS -->
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
@@ -21,7 +24,6 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120258112-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-
     function gtag() {
       dataLayer.push(arguments);
     }
@@ -103,9 +105,9 @@
       </div>
     </div>
   </div>
+  <p class="line-break"></p>
 
   <!-- 2:about -->
-  <p class="line-break"></p>
   <div class="container" id="about-me">
     <div class="text-center">
       <h2>
@@ -113,7 +115,7 @@
       </h2>
       <p>My passion is solving problems and developing solutions the world needs.</p>
       <p>I value simple, scalable and functional solutions over complex and bespoke.</p>
-      <p class="line-break"></p>
+      <hr>
     </div>
     <div class="row">
       <div class="col-md-6 text-center about-col" id="software">
@@ -124,7 +126,7 @@
           <h4>Focus</h4>
           <ul>
             <b>
-              <li> JavasSript: Node.js, Express, Angular</li>
+              <li>JavaScript: Node.js, Express, Angular</li>
               <li>Python: Django, Flask</li>
               <li>MongoDB, MySQL, PostgreSQL</li>
             </b>
@@ -159,47 +161,68 @@
       </div>
     </div>
   </div>
+  <hr>
 
-  <!-- 3:misc -->
+  <!-- 3:projects -->
   <div class="container" id="projects">
-    <div class="row">
-      <div class="col-md-9 mx-auto text-center">
-        <h2>
-          <b>PROJECTS</b>
-        </h2>
-        <a href="/comp/3dca.html">
+    <h2 class="text-center">
+      <b>PROJECTS</b>
+    </h2>
+    <div class="row text-center">
+      <div class="col-md-6 text-center projects" id="project-left">
+        <a href="/comp/3dca.html" title="Go to 3D Cellular Automata">
           <h3 class="font-blue">3D Game of Life</h3>
         </a>
         <p>My 3D cellular automata using rule 5766 (Game of Life) can be found linked. </p>
         <a href="/comp/3dca.html">
-          <img src="/img/3dca_scr1.JPG" class="img-fluid img-hoverable">
+          <img src="/img/3dca_scr1.JPG" class="img-fluid img-hoverable" title="Go to 3D Cellular Automata">
         </a>
         <p class="line-break"></p>
+      </div>
+      <div class="col-md-6 text-center projects" id="project-right" title="Go to GitHub repository">
+        <a href="https://github.com/Ho-Wan/vscode-setting-toggle">
+          <h3 class="font-blue">Setting Toggle:</h3>
+          <h5 class="font-blue">A VS Code Extension</h5>
+        </a>
+        <p>A Visual Studio Code extension developed by yours truly.</p>
+        <a href="https://marketplace.visualstudio.com/items?itemName=Ho-Wan.setting-toggle">
+          <img src="/img/setting-toggle-vsmarket.JPG" class="img-fluid img-hoverable" title="Go to VS marketplace">
+        </a>
+        <p class="line-break"></p>
+        <p>This extension adds a button and command which can be used to toggle any custom VS Code boolean setting.</p>
+        <a href="https://github.com/Ho-Wan/vscode-setting-toggle">
+          <img src="/img/setting-toggle-img1.png" class="img-fluid img-hoverable" title="Go to GitHub repository">
+        </a>
+        <p class="line-break"></p>
+      </div>
+    </div>
+    <hr>
+
+    <!-- 4:status -->
+    <div class="jumbotron">
+      <h2 class="display-4">STATUS</h1>
+        <p class="lead font-blue">Full-stack / Back-end web developer looking for work in London in JavaScript or Python.</p>
+        <p class="lead">I hope to work with people with a passion for technology and progress.</p>
         <p>I have an engineering degree from the University of Cambridge (Trinity College).</p>
         <p>I wil graduate with a MSc in Architectural Computation from UCL in September 2018.</p>
         <p>If you are interested in hiring a highly motivated and professional software engineer, please contact me through
           <a href="https://www.linkedin.com/in/howanto/">LinkedIn</a>.
         </p>
-        <p>I am based in London, United Kingdom. I am looking for work as a back-end or full-stack web developer, or as a web
-          app developer.
+        <p>Or email me directly at
+          <a href="mailto:howan.eng@gmail.com">howan.eng@gmail.com</a>
         </p>
-      </div>
     </div>
   </div>
 
   <!-- 4:footer -->
-  <br>
-  <!-- <div id="import-footer"></div> -->
-  <div id="import-footer-in">
-    <footer class="container-fluid bg-blue text-center">
-      <div class="info-box">
-        <div class="footnote">&copy;2018 Ho-Wan To</span>
-          <a href="https://www.linkedin.com/in/howanto/" class="fab fa-linkedin"></a>
-          <a href="https://github.com/ho-wan" class="fab fa-github"></a>
-        </div>
+  <footer class="container-fluid bg-blue text-center">
+    <div class="info-box">
+      <div class="footnote">&copy;2018 Ho-Wan To</span>
+        <a href="https://www.linkedin.com/in/howanto/" class="fab fa-linkedin"></a>
+        <a href="https://github.com/ho-wan" class="fab fa-github"></a>
       </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
 
   <!-- HOSTED -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="

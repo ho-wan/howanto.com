@@ -102,6 +102,11 @@ li {
   box-shadow: 10px 10px #1565c0;
 }
 
+.jumbotron {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 /* footer */
 footer {
   font-size: 1.3em;
