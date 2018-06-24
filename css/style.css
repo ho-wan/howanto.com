@@ -82,6 +82,11 @@ body {
   color: white;
 }
 
+/* Projects */
+.projects-text {
+  text-align: left;
+}
+
 /* About */
 
 li {
