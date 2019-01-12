@@ -83,6 +83,10 @@ body {
 }
 
 /* Projects */
+.section-header {
+  padding-bottom: 20px;
+}
+
 .projects-text {
   text-align: left;
 }
