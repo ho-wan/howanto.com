@@ -1,245 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content="Ho-Wan To's personal website. Software engineer, full-stack and back-end web
+    developer based in London, UK. VS code extension developer 'Setting Toggle'. Experienced structural engineer.
+    3D Cellular Automata : Game of Life."
+    />
+    <meta
+      name="keywords"
+      content="Ho-Wan, Ho-Wan To, London, Software engineer, full-stack, back-end, web developer,
+    Structural engineer, professional, VS code, extension developer, 3D Cellular Automata, 3D Game of Life,
+    JavaScript, Python, Node.js, Express.js, Django"
+    />
+    <meta name="author" content="Ho-Wan To" />
+    <title>Ho-Wan's Website</title>
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
+    <!-- HOSTED -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+      integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+      crossorigin="anonymous"
+    />
+    <!-- LOCAL -->
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/css/style.css" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="description" content="Ho-Wan To's personal website. Software engineer, full-stack and back-end web developer based in London, UK. VS code extension developer 'Setting Toggle'. Experienced structural engineer. 3D Cellular Automata : Game of Life.">
-  <meta name="keywords" content="Ho-Wan, Ho-Wan To, London, Software engineer, full-stack, back-end, web developer, Structural engineer, professional, VS code, extension developer, 3D Cellular Automata, 3D Game of Life, JavaScript, Python, Node.js, Express.js, Django">
-  <meta name="author" content="Ho-Wan To">
-  <title>Ho-Wan's Website</title>
-  <!-- FONTS -->
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-  <!-- HOSTED -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
-    crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
-    crossorigin="anonymous">
-  <!-- LOCAL -->
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="stylesheet" href="/css/style.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120258112-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-120258112-1");
+    </script>
+    <!-- Google Analytics End -->
+  </head>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120258112-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'UA-120258112-1');
-  </script>
-  <!-- Google Analytics End -->
-
-</head>
-
-<body>
-  <div id="home"></div>
-  <!-- 0:navbar -->
-  <div id="import-navbar-in">
-    <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-blue">
-      <div class="container-fluid">
-        <a class="navbar-brand fab fa-houzz fa-2x link-smooth" href="/" dest="home"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar" aria-controls="myNavbar" aria-expanded="false"
-          aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <div class="navbar-nav ml-auto">
-            <a class="nav-item nav-link link-smooth" href="/#about-me" dest="about-me">ABOUT</a>
-            <a class="nav-item nav-link link-smooth" href="/#projects" dest="projects">PROJECTS</a>
-            <a class="nav-item nav-link link-smooth" href="/comp/" dest="">COMPUTATION</a>
+  <body>
+    <div id="home"></div>
+    <!-- 0:navbar -->
+    <div id="import-navbar-in">
+      <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-blue">
+        <div class="container-fluid">
+          <a class="navbar-brand fab fa-houzz fa-2x link-smooth" href="/" dest="home"></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#myNavbar"
+            aria-controls="myNavbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <div class="navbar-nav ml-auto">
+              <a class="nav-item nav-link link-smooth" href="/#about-me" dest="about-me">ABOUT</a>
+              <a class="nav-item nav-link link-smooth" href="/#projects" dest="projects">PROJECTS</a>
+              <a class="nav-item nav-link link-smooth" href="/comp/" dest="">COMPUTATION</a>
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
-  </div>
+      </nav>
+    </div>
 
-  <!-- 1:carousel -->
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <div class="container-fluid flex">
+    <!-- 1:carousel -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <div class="container-fluid flex">
+        <div class="row">
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block w-100" src="img/b_concrete_cr.jpg" alt="First slide" />
+              <div class="carousel-caption">
+                <div class="text">
+                  Hello, I'm <span class="font-blue">Ho-Wan</span>. <br />
+                  I'm an engineer.
+                </div>
+                <p class="line-break"></p>
+                <button class="btn btn-about link-smooth" href="#about-me" dest="about-me">Find out more!</button>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="img/s_code_cr.jpg" alt="Second slide" />
+              <div class="carousel-caption">
+                <div class="text font-white">Software Engineer; <br />Full Stack Developer</div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="img/b_hallway_cr.jpg" alt="Third slide" />
+              <div class="carousel-caption">
+                <div class="text font-black">Structural Engineer; <br />Building Designer</div>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <p class="line-break"></p>
+
+    <!-- 2:about -->
+    <div class="container" id="about-me">
+      <div class="text-center">
+        <h2><b>ABOUT ME</b></h2>
+        <p>My passion is solving problems and developing solutions the world needs.</p>
+        <p>I value simple, scalable and functional solutions over complex and bespoke.</p>
+        <hr />
+      </div>
       <div class="row">
-        <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100" src="img/b_concrete_cr.jpg" alt="First slide">
-            <div class="carousel-caption">
-              <div class="text">Hello, I'm
-                <span class="font-blue">Ho-Wan</span>.
-                <br> I'm an engineer.
-              </div>
-              <p class="line-break"></p>
-              <button class="btn btn-about link-smooth" href="#about-me" dest="about-me">Find out more!</button>
+        <div class="col-md-6 text-center about-col" id="software">
+          <h3>Software Engineer</h3>
+          <img src="img/i_coding.jpg" class="img-fluid img-hoverable" />
+          <p class="line-break"></p>
+          <div class="text-left">
+            <h4>Focus</h4>
+            <ul>
+              <b>
+                <li>Primary Languages: Python, JavaScript, C#</li>
+                <li>Frameworks: Django, Flask, Express</li>
+                <li>Database: MongoDB, MySQL, PostgreSQL</li>
+              </b>
+            </ul>
+            <div class="font-s1">
+              <p>Secondary languages: Java, C++, TypeScript</p>
+              <p>3D toolsets: Unity, three.js, processing</p>
+              <p>Front-end: Bootstrap, jQuery, React, HTML, CSS</p>
+              <p>Other Interests: Machine Learning, Computer Vision, Augmented Reality</p>
             </div>
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="img/s_code_cr.jpg" alt="Second slide">
-            <div class="carousel-caption">
-              <div class="text font-white">Software Engineer;
-                <br>Full Stack Developer
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="img/b_hallway_cr.jpg" alt="Third slide">
-            <div class="carousel-caption">
-              <div class="text font-black">Structural Engineer;
-                <br>Building Designer
-              </div>
-            </div>
+            <br />
           </div>
         </div>
-        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
+        <div class="col-md-6 text-center about-col" id="structures">
+          <h3>Structural Engineer</h3>
+          <img src="img/i_construction.jpg" class="img-fluid img-hoverable" />
+          <p class="line-break"></p>
+          <div class="text-left">
+            <h4>Experience</h4>
+            <ul>
+              <b>
+                <li>100 Bishopsgate - Core Design Lead</li>
+                <li>Nova Victoria - Project Engineer</li>
+                <li>Finite Element/ Lateral Stability Expert</li>
+              </b>
+            </ul>
+            <p>
+              I am an experienced structural engineer and have worked as a senior engineer / project engineer on a
+              number of high profile construction projects.
+            </p>
+            <p>
+              I have worked with top clients such as Land Securities, Lend Lease, Brookfield, Mace, and many respected
+              architects in London.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  <p class="line-break"></p>
+    <hr />
 
-  <!-- 2:about -->
-  <div class="container" id="about-me">
-    <div class="text-center">
-      <h2>
-        <b>ABOUT ME</b>
-      </h2>
-      <p>My passion is solving problems and developing solutions the world needs.</p>
-      <p>I value simple, scalable and functional solutions over complex and bespoke.</p>
-      <hr>
-    </div>
-    <div class="row">
-      <div class="col-md-6 text-center about-col" id="software">
-        <h3>Software Engineer</h3>
-        <img src="img/i_coding.jpg" class="img-fluid img-hoverable">
-        <p class="line-break"></p>
-        <div class="text-left">
-          <h4>Focus</h4>
-          <ul>
-            <b>
-              <li>Primary Languages: Python, JavaScript, C#</li>
-              <li>Frameworks: Django, Flask, Express</li>
-              <li>Database: MongoDB, MySQL, PostgreSQL</li>
-            </b>
-          </ul>
-          <div class="font-s1">
-            <p>Secondary languages: Java, C++, TypeScript</p>
-            <p>3D toolsets: Unity, three.js, processing</p>
-            <p>Front-end: Bootstrap, jQuery, React, HTML, CSS</p>
-            <p>Other Interests: Machine Learning, Computer Vision, Augmented Reality</p>
-          </div>
-          <br>
-        </div>
-      </div>
-      <div class="col-md-6 text-center about-col" id="structures">
-        <h3>Structural Engineer</h3>
-        <img src="img/i_construction.jpg" class="img-fluid img-hoverable">
-        <p class="line-break"></p>
-        <div class="text-left">
-          <h4>Experience</h4>
-          <ul>
-            <b>
-              <li>100 Bishopsgate - Core Design Lead</li>
-              <li>Nova Victoria - Project Engineer</li>
-              <li>Finite Element/ Lateral Stability Expert</li>
-            </b>
-          </ul>
-          <p>I am an experienced structural engineer and have worked as a senior engineer / project engineer on a number of
-            high profile construction projects.</p>
-          <p>I have worked with top clients such as Land Securities, Lend Lease, Brookfield, Mace, and many well respected architects
-            in London.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <hr>
-
-  <!-- 3:projects -->
-  <div class="container" id="projects">
-    <h2 class="text-center">
-      <b>PROJECTS</b>
-    </h2>
-    <div class="row text-center">
-      <div class="col-md-6 text-center projects" id="project-left">
-        <a href="/comp/3dca.html" title="Go to 3D Cellular Automata">
-          <h3 class="font-blue">3D Game of Life</h3>
-        </a>
-        <div class="projects-text">
-          <p>3D cellular automata visualization created using three.js and WebGL. Logic implemented in JavaScript. This runs
-            and renders live in the web browser, and works on most mobiles.
+    <!-- 3:projects -->
+    <div class="container" id="projects">
+      <h2 class="text-center"><b>PERSONAL PROJECTS</b></h2>
+      <div class="row text-center">
+        <div class="col-md text-center projects" id="project-left">
+          <a href="/comp/3dca.html" title="Go to 3D Cellular Automata"> <h3 class="font-blue">3D Game of Life</h3> </a>
+          <div class="projects-text">
+            <p>
+              3D cellular automata visualization created using three.js and WebGL. Logic implemented in JavaScript. This
+              runs and renders live in the web browser, and works on most mobiles.
+            </p>
             <p class="line-break"></p>
-            Based on my morphogenetic programming assignment at UCL.</p>
-        </div>
-        <a href="/comp/3dca.html">
-          <img src="/img/3dca_scr1.JPG" class="img-fluid img-hoverable" title="Go to 3D Cellular Automata">
-        </a>
-        <p class="line-break"></p>
-      </div>
-      <div class="col-md-6 text-center projects" id="project-right" title="Go to GitHub repository">
-        <a href="https://github.com/Ho-Wan/vscode-setting-toggle">
-          <h3 class="font-blue">Setting Toggle:</h3>
-        </a>
-        <div class="projects-text">
-          <p>A Visual Studio Code extension developed by myself. This extension adds a button and command which can be used to
-            toggle any VS Code setting between two states. </p>
-            <p class="line-break"></p>
-            Uses Typescript, Node.js, npm, JSON string matching, RegEx, Yeoman.</p>
+            Based on my morphogenetic programming assignment at UCL.
           </div>
-        <a href="https://marketplace.visualstudio.com/items?itemName=Ho-Wan.setting-toggle">
-          <img src="/img/setting-toggle-vsmarket1.JPG" class="img-fluid img-hoverable" title="Go to VS marketplace">
-        </a>
-        <p class="line-break"></p>
-        <a href="https://github.com/Ho-Wan/vscode-setting-toggle">
-          <img src="https://raw.githubusercontent.com/Ho-Wan/vscode-setting-toggle/master/images/setting-toggle.gif" alt="Setting-toggle demo-gif-1"
-            class="img-fluid img-hoverable" title="Go to GitHub repository">
-        </a>
-        <p class="line-break"></p>
+          <a href="/comp/3dca.html">
+            <img src="/img/3dca_scr1.JPG" class="img-fluid img-hoverable" title="Go to 3D Cellular Automata" />
+          </a>
+          <p class="line-break"></p>
+        </div>
+        <div class="col-md text-center projects" id="project-right" title="Go to GitHub repository">
+          <a href="https://github.com/Ho-Wan/vscode-setting-toggle">
+            <h3 class="font-blue">VS Code: Setting Toggle</h3>
+          </a>
+          <div class="projects-text">
+            <p>
+              My first VS Code extension. This extension adds a button and command which can be used to toggle VS Code
+              settings such as codelens.
+            </p>
+            TECH: Typescript, Node.js, File System, RegEx. <br />
+            <a href="https://marketplace.visualstudio.com/items?itemName=Ho-Wan.setting-toggle">
+              <img src="https://vsmarketplacebadge.apphb.com/version-short/ho-wan.setting-toggle.svg" />
+              <img src="https://vsmarketplacebadge.apphb.com/installs/ho-wan.setting-toggle.svg" />
+            </a>
+            <p class="line-break"></p>
+          </div>
+          <a href="https://marketplace.visualstudio.com/items?itemName=Ho-Wan.setting-toggle">
+            <img
+              src="https://raw.githubusercontent.com/Ho-Wan/howanto.com/master/img/setting-toggle-vsmarket1.JPG"
+              alt="setting-toggle-vsmarket1.JPG"
+              class="img-fluid img-hoverable"
+              title="Go to VS marketplace"
+            />
+          </a>
+          <br />
+          <a href="https://github.com/Ho-Wan/vscode-setting-toggle">
+            <img
+              src="https://raw.githubusercontent.com/Ho-Wan/vscode-setting-toggle/master/images/setting-toggle.gif"
+              alt="Setting-toggle.gif"
+              class="img-fluid img-hoverable"
+              title="Go to GitHub repository"
+            />
+          </a>
+          <p class="line-break"></p>
+        </div>
+        <div class="col-md text-center projects" id="project-right" title="Go to GitHub repository">
+          <a href="https://github.com/Ho-Wan/vscode-trello-viewer">
+            <h3 class="font-blue">VS Code: Trello Viewer</h3>
+          </a>
+          <div class="projects-text">
+            <p>
+              A VS Code extension that allows users to connect to their Trello account and view cards inside of VS Code
+              using the markdown preview.
+            </p>
+            TECH: Typescript, Node.js, VS Code Tree View, File System, Trello API, async/await, unit testing, encryption
+            with IV <br />
+            <a href="https://marketplace.visualstudio.com/items?itemName=Ho-Wan.vscode-trello-viewer">
+              <img src="https://vsmarketplacebadge.apphb.com/version-short/ho-wan.vscode-trello-viewer.svg" />
+              <img src="https://vsmarketplacebadge.apphb.com/installs/ho-wan.vscode-trello-viewer.svg" />
+            </a>
+            <p class="line-break"></p>
+          </div>
+          <a href="https://marketplace.visualstudio.com/items?itemName=Ho-Wan.setting-toggle">
+            <img
+              src="https://raw.githubusercontent.com/Ho-Wan/howanto.com/master/img/screenshot1-markdown-preview.png"
+              alt="screenshot1-markdown-preview"
+              class="img-fluid img-hoverable"
+              title="Go to VS marketplace"
+            />
+          </a>
+          <p class="line-break"></p>
+        </div>
       </div>
-    </div>
-    <hr>
+      <hr />
 
-    <!-- 4:status -->
-    <div class="jumbotron">
-      <h2 class="display-4">STATUS</h1>
-        <p class="lead">Highly motivated engineer looking for work in London as a software/web developer.</p>
-        <p>I have an engineering degree from the University of Cambridge (Trinity College).</p>
-        <p>I wil graduate with a MSc in Architectural Computation from UCL in September 2018.</p>
-        <p>If you are interested in hiring me, please contact me through
+      <!-- 4:status -->
+      <div class="jumbotron">
+        <h2 class="display-4">STATUS</h2>
+        <p class="lead">Working as a full stack web developer for Theodo UK since Sept 2018.</p>
+        <p>
+          I have a bachelor's degree in Engineering from the University of Cambridge, and a master's degree from UCL in
+          Architectural Computation
+        </p>
+        <p>
+          For job related opportunities, please contact me through
           <a href="https://www.linkedin.com/in/howanto/">LinkedIn</a>.
         </p>
-        <p>Or email me directly at
-          <a href="mailto:howan.eng@gmail.com">howan.eng@gmail.com</a>
-        </p>
-    </div>
-  </div>
-
-  <!-- 4:footer -->
-  <footer class="container-fluid bg-blue text-center">
-    <div class="info-box">
-      <div class="footnote">&copy;2018 Ho-Wan To</span>
-        <a href="https://www.linkedin.com/in/howanto/" class="fab fa-linkedin"></a>
-        <a href="https://github.com/ho-wan" class="fab fa-github"></a>
+        <p>Or email me directly at <a href="mailto:howan.eng@gmail.com">howan.eng@gmail.com</a></p>
       </div>
     </div>
-  </footer>
 
-  <!-- HOSTED -->
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-    crossorigin="anonymous"></script>
-  <!-- LOCAL -->
-  <script src="js/index.js"></script>
+    <!-- 4:footer -->
+    <footer class="container-fluid bg-blue text-center">
+      <div class="info-box">
+        <div class="footnote">
+          &copy;2018 Ho-Wan To <a href="https://www.linkedin.com/in/howanto/" class="fab fa-linkedin"></a>
+          <a href="https://github.com/ho-wan" class="fab fa-github"></a>
+        </div>
+      </div>
+    </footer>
 
-</body>
-
+    <!-- HOSTED -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+      integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+      crossorigin="anonymous"
+    ></script>
+    <!-- LOCAL -->
+    <script src="js/index.js"></script>
+  </body>
 </html>
